@@ -12,6 +12,7 @@ source:
     - jsoneoverflow.patch  # [win and py<34]
     - afxres.patch  # [win and py<35]
     - lshutil.patch  # [win and py<35]
+    - 0001-Define-missing-posix-socket-error-EAFNOSUPPORT.patch  # [win and vc<14]
 
 build:
   number: 6
