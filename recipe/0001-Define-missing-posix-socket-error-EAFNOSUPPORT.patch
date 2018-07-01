@@ -1,0 +1,26 @@
+From 1d2b68d18e984bfab532c368cc03b9530d7b4ceb Mon Sep 17 00:00:00 2001
+From: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date: Sun, 1 Jul 2018 07:21:40 +0000
+Subject: [PATCH] Define missing posix socket error: EAFNOSUPPORT
+
+---
+ src/include/port-sockets.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/include/port-sockets.h b/src/include/port-sockets.h
+index b3ab9c906..86a7818f0 100644
+--- a/src/include/port-sockets.h
++++ b/src/include/port-sockets.h
+@@ -72,6 +72,9 @@ typedef WSABUF sg_buf;
+ #ifndef ETIMEDOUT
+ #define ETIMEDOUT WSAETIMEDOUT
+ #endif
++#ifndef EAFNOSUPPORT
++#define EAFNOSUPPORT WSAEAFNOSUPPORT
++#endif
+ 
+ /* Translate posix_error to its Winsock counterpart and set the last Winsock
+  * error to the result. */
+-- 
+2.17.1
+
